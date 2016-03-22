@@ -1,0 +1,18 @@
+{
+  "name": "metalsmith-michaelangelo",
+  "version": "1.0.0",
+  "description": "Nunjucks renderer",
+  "main": "src/plugin.js",
+  "repository": "mrajo/metalsmith-michaelangelo",
+  "author": {
+    "name": "mrajo",
+    "email": "anthony.c@stle.co"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.5.2",
+    "debug": "^2.2.0",
+    "micromatch": "^2.3.7",
+    "nunjucks": "^2.3.0"
+  }
+}
