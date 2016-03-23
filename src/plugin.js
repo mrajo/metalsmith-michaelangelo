@@ -6,7 +6,16 @@ const each = require('async').each
 const nunjucks = require('nunjucks')
 const debug = require('debug')('metalsmith-michaelangelo')
 
-const plugin = (options) => {
+const plugin = (params) => {
+  const defaults = {
+    directory: 'templates',
+    templateKey: 'layout',
+    default: 'default.html',
+    pattern: '**/*.html',
+    filters: {}
+  }
+  const options = Object.assign(defaults, params)
+
   return function (files, metalsmith, done) {
     const env = nunjucks.configure(metalsmith.path(options.directory))
 
