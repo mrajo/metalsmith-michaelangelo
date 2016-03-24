@@ -1,0 +1,1 @@
+{"directory":"layouts","templateKey":"layout","default":"main.html","pattern":"*.html","filters":["rot13"],"debug":true}

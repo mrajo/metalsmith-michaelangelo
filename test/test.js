@@ -135,4 +135,28 @@ describe('rendering', function () {
       }))
       .build(assertDirsEqual(src, done));
   });
+
+  it('should render with every option overridden', function (done) {
+    var src = 'test/fixtures/render-no-defaults';
+
+    Metalsmith(src)
+      .use(render({
+        directory: 'layouts',
+        templateKey: 'layout',
+        default: 'main.html',
+        pattern: '*.html',
+        filters: {
+          rot13: function (data) {
+            if (typeof data == 'string') {
+              return data.replace(/[a-zA-Z]/g, (c) => {
+                return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26)
+              })
+            }
+            return data
+          }
+        },
+        debug: true
+      }))
+      .build(assertDirsEqual(src, done));
+  });
 });

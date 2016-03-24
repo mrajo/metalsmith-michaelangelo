@@ -55,6 +55,8 @@ const plugin = (params) => {
     each(Object.keys(files), render, (err) => {
       // creates a JSON file of config for debugging
       if (options.debug) {
+        // convert filters to an array of filter names since functions won't serialize
+        options.filters = Object.keys(options.filters)
         debug(`creating debug file`)
         files['debug.json'] = {
           contents: new Buffer(JSON.stringify(options))
