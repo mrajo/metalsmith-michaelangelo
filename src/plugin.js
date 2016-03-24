@@ -20,14 +20,12 @@ const plugin = (params) => {
   return function (files, metalsmith, done) {
     const env = nunjucks.configure(metalsmith.path(options.directory))
 
-    env.addFilter('rot13', (data) => {
-      if (typeof data == 'string') {
-        return data.replace(/[a-zA-Z]/g, (c) => {
-          return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26)
-        })
+    const filter_names = Object.keys(options.filters)
+    if (filter_names.length > 0) {
+      for (var i = 0; i < filter_names.length; i++) {
+        env.addFilter(filter_names[i], options.filters[filter_names[i]]);
       }
-      return data
-    });
+    }
 
     const should_render = (file) => {
       return (options.pattern && match(file, options.pattern)[0]) ||

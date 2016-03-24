@@ -95,5 +95,22 @@ describe('configuration', function () {
       .build(assertFilesEqual(src, 'debug.json', done));
   });
 
-  it('should add filters');
+  it('should use custom filters', function (done) {
+    var src = 'test/fixtures/config-filters';
+
+    Metalsmith(src)
+      .use(render({
+        filters: {
+          rot13: function (data) {
+            if (typeof data == 'string') {
+              return data.replace(/[a-zA-Z]/g, (c) => {
+                return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26)
+              })
+            }
+            return data
+          }
+        }
+      }))
+      .build(assertDirsEqual(src, done));
+  });
 });
