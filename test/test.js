@@ -136,6 +136,16 @@ describe('rendering', function () {
       .build(assertDirsEqual(src, done));
   });
 
+  it('should render inline templates', function (done) {
+    var src = 'test/fixtures/render-inline';
+
+    Metalsmith(src)
+      .use(render({
+        pattern: '*.html'
+      }))
+      .build(assertDirsEqual(src, done));
+  });
+
   it('should render with every option overridden', function (done) {
     var src = 'test/fixtures/render-no-defaults';
 

@@ -39,11 +39,24 @@ const plugin = (params) => {
     const render = (file, done) => {
       if (should_render(file)) {
         debug(`rendering ${file}`)
-        const template = metalsmith.path(options.directory, files[file][options.templateKey] || options.default)
+
+        let template = null;
+        let rendered = null;
         const data = Object.assign({}, metalsmith.metadata(), files[file])
-        data.contents = files[file].contents.toString()
-        const rendered = env.render(template, data)
+
+        if (files[file][options.templateKey] === false) {
+          // render file content as inline template
+          template = files[file].contents.toString()
+          rendered = env.renderString(template, data)
+        } else {
+          // render template file with file contents
+          template = metalsmith.path(options.directory, files[file][options.templateKey] || options.default)
+          data.contents = files[file].contents.toString()
+          rendered = env.render(template, data)
+        }
+
         files[file].contents = new Buffer(rendered)
+
         done()
       } else {
         debug(`skipped ${file}`)

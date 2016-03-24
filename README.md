@@ -38,7 +38,8 @@ Type: `string`
 Default: `layout`
 
 Defines a key in a Metalsmith file's front matter to be used to specify which
-template in `options.directory` to render.
+template in `options.directory` to render. If this key is set to `false`, then
+the file's contents will be rendered as an inline template.
 
 ### default
 Type: `string`
