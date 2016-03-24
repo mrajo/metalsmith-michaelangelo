@@ -37,8 +37,10 @@ describe('configuration', function () {
     var src = 'test/fixtures/config-defaults';
 
     Metalsmith(src)
-      .use(render())
-      .build(assertDirsEqual(src, done));
+      .use(render({
+        debug: true
+      }))
+      .build(assertFilesEqual(src, 'debug.json', done));
   });
 
   it('should override debug and create a debug output file', function (done) {
@@ -110,6 +112,26 @@ describe('configuration', function () {
             return data
           }
         }
+      }))
+      .build(assertDirsEqual(src, done));
+  });
+});
+
+describe('rendering', function () {
+  it('should render with defaults', function (done) {
+    var src = 'test/fixtures/render-defaults';
+
+    Metalsmith(src)
+      .use(render())
+      .build(assertDirsEqual(src, done));
+  });
+
+  it('should render by pattern with default template', function (done) {
+    var src = 'test/fixtures/render-pattern';
+
+    Metalsmith(src)
+      .use(render({
+        pattern: '*.html'
       }))
       .build(assertDirsEqual(src, done));
   });
