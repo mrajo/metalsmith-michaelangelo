@@ -49,15 +49,23 @@ template in its front matter with `options.templateKey`.
 
 ### pattern
 Type: `string`
-Default: `**/*.html`
+Default: `null`
 
-Defines a glob pattern for [micromatch](https://github.com/jonschlinkert/micromatch) to determine which files to render. If `null`, only files with `options.templateKey` defined in front matter will be rendered.
+By default (when pattern is `null`), only files with `options.templateKey`
+defined in front matter will be rendered. This can be overridden with a glob
+pattern (handled by [micromatch](https://github.com/jonschlinkert/micromatch))
+to determine which files to render. If a glob pattern is given, the default
+template defined in `options.default` will be used when no template is set in
+front matter.
 
 ### filters
 Type: `object`
 Default: `{}`
 
-Defines a collection of custom filters to add to the Nunjucks Environment.
+Defines a collection of custom filters to add to the Nunjucks Environment. The
+object key will serve as the filter name and the value will be the function
+implementing the filter. Refer to [Nunjucks docs](http://mozilla.github.io/nunjucks/api.html#custom-filters)
+for more information.
 
 ## License
 
