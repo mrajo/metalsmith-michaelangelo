@@ -5,7 +5,7 @@ var dir_equal = require('assert-dir-equal');
 var Metalsmith = require('metalsmith');
 var render = require('../src/plugin');
 var path = require('path');
-var fs = require('fs');
+var fs = require('fs-extra');
 var buffer_equal = require('buffer-equal');
 var utf8 = require('is-utf8');
 
@@ -35,6 +35,7 @@ function assertFilesEqual(src, file, done) {
 describe('configuration', function () {
   it('should use default configuration', function (done) {
     var src = 'test/fixtures/config-defaults';
+    fs.ensureDirSync(path.join(src, 'src'));
 
     Metalsmith(src)
       .use(render({
@@ -45,6 +46,7 @@ describe('configuration', function () {
 
   it('should override debug and create a debug output file', function (done) {
     var src = 'test/fixtures/config-debug';
+    fs.ensureDirSync(path.join(src, 'src'));
 
     Metalsmith(src)
       .use(render({
@@ -55,6 +57,7 @@ describe('configuration', function () {
 
   it('should override directory', function (done) {
     var src = 'test/fixtures/config-directory';
+    fs.ensureDirSync(path.join(src, 'src'));
 
     Metalsmith(src)
       .use(render({
@@ -66,6 +69,7 @@ describe('configuration', function () {
 
   it('should override templateKey', function (done) {
     var src = 'test/fixtures/config-templatekey';
+    fs.ensureDirSync(path.join(src, 'src'));
 
     Metalsmith(src)
       .use(render({
@@ -77,6 +81,7 @@ describe('configuration', function () {
 
   it('should override default template', function (done) {
     var src = 'test/fixtures/config-default-template';
+    fs.ensureDirSync(path.join(src, 'src'));
 
     Metalsmith(src)
       .use(render({
@@ -88,6 +93,7 @@ describe('configuration', function () {
 
   it('should override pattern', function (done) {
     var src = 'test/fixtures/config-pattern';
+    fs.ensureDirSync(path.join(src, 'src'));
 
     Metalsmith(src)
       .use(render({
