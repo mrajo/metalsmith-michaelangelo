@@ -19,7 +19,7 @@ module.exports = {
       const file_e = fs.readFileSync(path.join(src, 'expected', file))
 
       if (utf8(file_a) && utf8(file_e)) {
-        t.equal(file_a.toString(), file_e.toString(), `${file} is identical`)
+        t.equal(file_a.toString().trim(), file_e.toString().trim(), `${file} is identical`)
       } else {
         t.ok(buffer_equal(file_a, file_e), `${file} is identical`)
       }
@@ -43,7 +43,7 @@ module.exports = {
         const file_e = fs.readFileSync(path.resolve(path_expected, file))
 
         if (utf8(file_a) && utf8(file_e)) {
-          t.equal(file_a.toString(), file_e.toString(), `${file} is identical`)
+          t.equal(file_a.toString().trim(), file_e.toString().trim(), `${file} is identical`)
         } else {
           t.ok(buffer_equal(file_a, file_e), `${file} is identical`)
         }
