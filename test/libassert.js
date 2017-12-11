@@ -5,6 +5,7 @@ const fs = require('fs-extra')
 const buffer_equal = require('buffer-equal')
 const utf8 = require('is-utf8')
 const readdir = require('fs-readdir-recursive')
+const isequal = require('lodash.isequal')
 
 // @t tape test object
 // @src Metalsmith source folder
@@ -48,6 +49,20 @@ module.exports = {
           t.ok(buffer_equal(file_a, file_e), `${file} is identical`)
         }
       })
+
+      t.end()
+    }
+  },
+  jsonEqual: (t, src, file) => {
+    return (err) => {
+      if (err) t.fail(`Metalsmith build failed: ${err.toString()}`)
+
+      const path_actual   = path.join(src, 'build')
+      const path_expected = path.join(src, 'expected')
+      const json_a = fs.readJsonSync(path.resolve(path_actual, file))
+      const json_e = fs.readJsonSync(path.resolve(path_expected, file))
+
+      t.ok(isequal(json_a, json_e), `${file} is identical`)
 
       t.end()
     }

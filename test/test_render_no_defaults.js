@@ -26,7 +26,10 @@ test('render: should render with all options overridden', (t) => {
           return data
         }
       },
+      env: {
+        autoescape: false
+      },
       debug: true
     }))
-    .build(assert.dirsEqual(t, src))
+    .build(assert.jsonEqual(t, src, 'debug.json'))
 })

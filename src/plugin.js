@@ -13,13 +13,14 @@ const plugin = (params) => {
     default: 'default.html',
     pattern: null,
     filters: {},
-    debug: false
+    debug: false,
+    env: {}
   }
   const options = Object.assign(defaults, params)
 
   return function (files, metalsmith, done) {
     // initialize Nunjucks rendering engine
-    const env = nunjucks.configure(metalsmith.path(options.directory))
+    const env = nunjucks.configure(metalsmith.path(options.directory), options.env)
 
     // add custom filters from options to Nunjucks engine
     const filter_names = Object.keys(options.filters)

@@ -1,0 +1,1 @@
+{"directory":"templates","templateKey":"template","default":"default.html","pattern":null,"filters":[],"debug":true,"env":{"autoescape":false,"trimBlocks":true,"tags":{"blockStart":"<%","blockEnd":"%>","variableStart":"<$","variableEnd":"$>","commentStart":"<#","commentEnd":"#>"},"dev":false,"throwOnUndefined":false,"lstripBlocks":false}}

@@ -68,6 +68,13 @@ object key will serve as the filter name and the value will be the function
 implementing the filter. Refer to [Nunjucks docs](http://mozilla.github.io/nunjucks/api.html#custom-filters)
 for more information.
 
+### env
+Type: `object`
+Default: `{}`
+
+Defines a collection of to pass to the Environment instance in Nunjucks. Refer to
+[Nunjucks docs](https://mozilla.github.io/nunjucks/api.html#configure) for more information.
+
 ## License
 
 MIT © [Anthony Castle](http://github.com/mrajo)

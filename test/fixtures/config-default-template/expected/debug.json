@@ -1,1 +1,1 @@
-{"directory":"templates","templateKey":"template","default":"main.tpl","pattern":null,"filters":[],"debug":true}
+{"directory":"templates","templateKey":"template","default":"main.tpl","pattern":null,"filters":[],"debug":true,"env":{"dev":false,"autoescape":true,"throwOnUndefined":false,"trimBlocks":false,"lstripBlocks":false}}
