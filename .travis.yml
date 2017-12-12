@@ -4,12 +4,6 @@ node_js:
   - "9.0"
   - "8.9"
   - "8.0"
-  - "7.10"
-  - "7.0"
-  - "6.12"
-  - "6.0"
-  - "5.12"
-  - "5.0"
 env:
   global:
     - CC_TEST_REPORTER_ID=22a90ce3d9efbb28ffb858e26e5f2d4b53f03186956eda3e50cf58e2d1754ddf
@@ -19,5 +13,6 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - make test
+  - make coverage
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
