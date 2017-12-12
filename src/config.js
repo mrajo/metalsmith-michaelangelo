@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function (params) {
+const setConfig = (params) => {
   const defaults = {
     directory: 'templates',
     templateKey: 'template',
@@ -12,3 +12,5 @@ module.exports = function (params) {
   }
   return Object.assign(defaults, params)
 }
+
+module.exports = setConfig
