@@ -1,4 +1,4 @@
-# metalsmith-michaelangelo [![Build Status](https://travis-ci.org/mrajo/metalsmith-michaelangelo.svg?branch=master)](https://travis-ci.org/mrajo/metalsmith-michaelangelo)
+# metalsmith-michaelangelo [![Build Status](https://travis-ci.org/mrajo/metalsmith-michaelangelo.svg?branch=master)](https://travis-ci.org/mrajo/metalsmith-michaelangelo) [![Maintainability](https://api.codeclimate.com/v1/badges/de1fc8b092ef81484d3b/maintainability)](https://codeclimate.com/github/mrajo/metalsmith-michaelangelo/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/de1fc8b092ef81484d3b/test_coverage)](https://codeclimate.com/github/mrajo/metalsmith-michaelangelo/test_coverage)
 
 > A Metalsmith plugin for rendering Nunjucks templates
 
