@@ -16,5 +16,5 @@ test('config: should override template key', (t) => {
       templateKey: 'layout',
       debug: true
     }))
-    .build(assert.filesEqual(t, src, 'debug.json'))
+    .build(assert.jsonEqual(t, src, 'debug.json'))
 })

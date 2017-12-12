@@ -17,5 +17,5 @@ test('config: should override filters', (t) => {
       },
       debug: true
     }))
-    .build(assert.filesEqual(t, src, 'debug.json'))
+    .build(assert.jsonEqual(t, src, 'debug.json'))
 })

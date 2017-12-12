@@ -15,5 +15,5 @@ test('config: should have default config', (t) => {
     .use(render({
       debug: true
     }))
-    .build(assert.filesEqual(t, src, 'debug.json'))
+    .build(assert.jsonEqual(t, src, 'debug.json'))
 })

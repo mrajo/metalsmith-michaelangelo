@@ -16,5 +16,5 @@ test('config: should override directory', (t) => {
       directory: 'layouts',
       debug: true
     }))
-    .build(assert.filesEqual(t, src, 'debug.json'))
+    .build(assert.jsonEqual(t, src, 'debug.json'))
 })

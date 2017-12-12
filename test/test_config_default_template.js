@@ -16,5 +16,5 @@ test('config: should override default template', (t) => {
       default: 'main.tpl',
       debug: true
     }))
-    .build(assert.filesEqual(t, src, 'debug.json'))
+    .build(assert.jsonEqual(t, src, 'debug.json'))
 })
