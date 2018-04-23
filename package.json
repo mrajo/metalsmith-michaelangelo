@@ -22,6 +22,7 @@
     "lodash.isequal": "^4.5.0",
     "metalsmith": "^2.1.0",
     "nyc": "^11.3.0",
+    "tap-nyc": "^1.0.3",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   }
