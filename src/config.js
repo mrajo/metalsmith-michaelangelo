@@ -1,16 +1,16 @@
-'use strict'
+"use strict";
 
 const setConfig = (params) => {
   const defaults = {
-    directory: 'templates',
-    templateKey: 'template',
-    default: 'default.html',
+    directory: "templates",
+    templateKey: "template",
+    default: "default.html",
     pattern: null,
     filters: {},
     debug: false,
     env: {}
-  }
-  return Object.assign(defaults, params)
-}
+  };
+  return Object.assign(defaults, params);
+};
 
-module.exports = setConfig
+module.exports = setConfig;
