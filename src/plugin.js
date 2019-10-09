@@ -19,7 +19,7 @@ const plugin = (params) => {
         options.filters = Object.keys(options.filters)
         debug(`creating debug file`)
         files['debug.json'] = {
-          contents: new Buffer(JSON.stringify(options))
+          contents: Buffer.from(JSON.stringify(options))
         }
       }
       done()

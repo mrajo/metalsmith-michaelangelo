@@ -24,7 +24,7 @@ const getRenderFunction = (files, metalsmith, options, env) => {
   // checks if file should be rendered
   const should_render = (file, options) => {
     return (options.pattern && match(file, options.pattern)[0]) ||
-            (options.pattern == null && files[file].hasOwnProperty(options.templateKey) && files[file][options.templateKey] != null)
+      (options.pattern == null && files[file].hasOwnProperty(options.templateKey) && files[file][options.templateKey] != null)
   }
 
   return (file, done) => {
@@ -46,7 +46,7 @@ const getRenderFunction = (files, metalsmith, options, env) => {
         rendered = env.render(template, data)
       }
 
-      files[file].contents = new Buffer(rendered)
+      files[file].contents = Buffer.from(rendered)
 
       done()
     } else {
