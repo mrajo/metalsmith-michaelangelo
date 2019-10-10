@@ -7,6 +7,6 @@ test: node_modules
 	@$(nodebin)tape test/test*.js | $(nodebin)tap-spec
 
 coverage:
-	@$(nodebin)nyc tape test/test*.js | $(nodebin)tap-nyc
+	@$(nodebin)nyc --reporter=lcov tape test/test*.js | $(nodebin)tap-min
 
 .PHONY: test coverage
