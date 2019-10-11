@@ -1,4 +1,10 @@
-# metalsmith-michaelangelo [![Build Status](https://travis-ci.org/mrajo/metalsmith-michaelangelo.svg?branch=master)](https://travis-ci.org/mrajo/metalsmith-michaelangelo) [![Maintainability](https://api.codeclimate.com/v1/badges/de1fc8b092ef81484d3b/maintainability)](https://codeclimate.com/github/mrajo/metalsmith-michaelangelo/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/de1fc8b092ef81484d3b/test_coverage)](https://codeclimate.com/github/mrajo/metalsmith-michaelangelo/test_coverage)
+# metalsmith-michaelangelo
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/mrajo/metalsmith-michaelangelo) [![Build Status](https://travis-ci.org/mrajo/metalsmith-michaelangelo.svg?branch=master)](https://travis-ci.org/mrajo/metalsmith-michaelangelo)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/de1fc8b092ef81484d3b/maintainability)](https://codeclimate.com/github/mrajo/metalsmith-michaelangelo/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/de1fc8b092ef81484d3b/test_coverage)](https://codeclimate.com/github/mrajo/metalsmith-michaelangelo/test_coverage)
+
+[![Dependencies Status](https://david-dm.org/mrajo/metalsmith-michaelangelo/status.svg)](https://david-dm.org/mrajo/metalsmith-michaelangelo) [![Dev Dependencies Status](https://david-dm.org/mrajo/metalsmith-michaelangelo/dev-status.svg)](https://david-dm.org/mrajo/metalsmith-michaelangelo?type=dev)
 
 > A Metalsmith plugin for rendering Nunjucks templates
 
